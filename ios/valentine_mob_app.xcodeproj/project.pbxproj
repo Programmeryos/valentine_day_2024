@@ -14,6 +14,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-valentine_mob_app-valentine_mob_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-valentine_mob_app-valentine_mob_appTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		DEE381312B7BC11F005FCFCD /* say-no.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEE3812F2B7BC11F005FCFCD /* say-no.mp3 */; };
+		DEE381322B7BC11F005FCFCD /* happy-pig.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DEE381302B7BC11F005FCFCD /* happy-pig.mp3 */; };
+		DEE381342B7BC554005FCFCD /* starrt-bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DEE381332B7BC554005FCFCD /* starrt-bg.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-valentine_mob_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-valentine_mob_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = valentine_mob_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-valentine_mob_app-valentine_mob_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-valentine_mob_app-valentine_mob_appTests.release.xcconfig"; path = "Target Support Files/Pods-valentine_mob_app-valentine_mob_appTests/Pods-valentine_mob_app-valentine_mob_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		DEE3812F2B7BC11F005FCFCD /* say-no.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "say-no.mp3"; path = "../android/app/src/main/res/raw/say-no.mp3"; sourceTree = "<group>"; };
+		DEE381302B7BC11F005FCFCD /* happy-pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "happy-pig.mp3"; path = "../android/app/src/main/res/raw/happy-pig.mp3"; sourceTree = "<group>"; };
+		DEE381332B7BC554005FCFCD /* starrt-bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "starrt-bg.jpeg"; path = "../../../Downloads/starrt-bg.jpeg"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -91,6 +97,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				DEE381332B7BC554005FCFCD /* starrt-bg.jpeg */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = valentine_mob_app;
@@ -116,6 +123,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				DEE381302B7BC11F005FCFCD /* happy-pig.mp3 */,
+				DEE3812F2B7BC11F005FCFCD /* say-no.mp3 */,
 				13B07FAE1A68108700A75B9A /* valentine_mob_app */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* valentine_mob_appTests */,
@@ -241,7 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE381312B7BC11F005FCFCD /* say-no.mp3 in Resources */,
+				DEE381342B7BC554005FCFCD /* starrt-bg.jpeg in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				DEE381322B7BC11F005FCFCD /* happy-pig.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +556,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -572,6 +584,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -579,7 +592,10 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -616,7 +632,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -636,6 +652,7 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
@@ -643,7 +660,10 @@
 					"-DFOLLY_USE_LIBCPP=1",
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 				);
+				OTHER_LDFLAGS = "$(inherited)  ";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
